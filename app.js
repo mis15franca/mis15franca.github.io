@@ -1,0 +1,1 @@
+const t=new Date('2026-10-03T21:00:00');function u(){const d=t-new Date();const days=Math.floor(d/86400000);const h=Math.floor(d%86400000/3600000);const m=Math.floor(d%3600000/60000);const s=Math.floor(d%60000/1000);document.getElementById('countdown').innerHTML=`${days} días<br>${h} horas<br>${m} minutos<br>${s} segundos`;};u();setInterval(u,1000);

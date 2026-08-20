@@ -1,0 +1,1 @@
+Reemplazar placeholders y completar textos.
