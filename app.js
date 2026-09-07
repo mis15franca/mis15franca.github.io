@@ -1,1 +1,37 @@
-const targetDate=new Date('2026-10-03T21:00:00');function upd(){const d=targetDate-new Date();if(d<0)return;days.textContent=Math.floor(d/86400000);hours.textContent=Math.floor((d%86400000)/3600000);minutes.textContent=Math.floor((d%3600000)/60000);seconds.textContent=Math.floor((d%60000)/1000);}setInterval(upd,1000);upd();document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();confetti({particleCount:180,spread:90});mensaje.innerHTML='✨ Gracias por confirmar tu asistencia';});document.querySelectorAll('.gallery img').forEach(img=>img.onclick=()=>window.open(img.src,'_blank'));
+AOS.init({duration: 1000, once: true});
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzJ-Mp9Hy6RZe_8jVv2mI80u_1NV90LyJfgEaXSLlDobO4vW9AjpZM7OGXkjLMb3XnB/exec";
+const targetDate = new Date("2026-10-03T21:00:00");
+
+function updateCountdown() {
+    const d = targetDate - new Date();
+    if (d <= 0) return;
+    document.getElementById('days').textContent = Math.floor(d / 86400000);
+    document.getElementById('hours').textContent = Math.floor((d % 86400000) / 3600000);
+    document.getElementById('minutes').textContent = Math.floor((d % 3600000) / 60000);
+    document.getElementById('seconds').textContent = Math.floor((d % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+document.getElementById('rsvpForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = {
+        nombre: document.getElementById('nombre').value,
+        asiste: document.getElementById('asiste').value,
+        cancion: document.getElementById('cancion').value,
+        comentarios: document.getElementById('comentarios').value
+    };
+    try {
+        await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {'Content-Type': 'text/plain;charset=utf-8'},
+            body: JSON.stringify(data)
+        });
+        confetti({particleCount: 200, spread: 90});
+        document.getElementById('mensaje').innerHTML = '✨ Gracias por confirmar tu asistencia';
+        e.target.reset();
+    } catch (err) {
+        document.getElementById('mensaje').innerHTML = '⚠️ Error enviando información';
+    }
+});
