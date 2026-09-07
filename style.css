@@ -35,26 +35,7 @@ body {
     overflow: hidden;
 }
 
-.hero::after{
 
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:120px;
-
-    background:
-        linear-gradient(
-            transparent,
-            #faf8f5
-        );
-
-    pointer-events:none;
-}
 
 .hero-content{
     animation: heroFade 1.3s ease-out;
