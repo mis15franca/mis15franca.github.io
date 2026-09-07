@@ -1,1 +1,325 @@
-*{box-sizing:border-box}body{margin:0;font-family:Poppins,sans-serif;background:#faf8f5;color:#333}.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.65)),url(images/franqui_hero.jpeg);background-size:cover;background-position:65% center}.overlay{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}.xv,h1{font-family:"Playfair Display",serif;color:#f6dd8c}.xv{font-size:4rem}h1{font-size:clamp(4rem,12vw,7rem);margin:0}.btn{display:inline-block;background:#d4af37;color:white;padding:14px 24px;border-radius:30px;text-decoration:none}.section{padding:60px 20px;max-width:1100px;margin:auto}.countdown{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.countdown div{background:white;padding:20px;border-radius:18px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08)}.countdown span{display:block;font-size:2rem;color:#d4af37}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gallery img{width:100%;height:180px;object-fit:cover;border-radius:14px;transition:.3s}.gallery img:hover{transform:scale(1.03)}.timeline div{background:white;margin:10px 0;padding:14px;border-radius:12px}.floating-menu{position:fixed;right:12px;bottom:12px;z-index:99}.floating-menu a{display:block;background:#d4af37;color:#fff;text-decoration:none;padding:10px;margin-top:6px;border-radius:50%}input,select,textarea,button{width:100%;padding:14px;margin-top:10px;border-radius:12px;border:1px solid #ddd}button{background:#d4af37;color:#fff;border:none}@media(min-width:768px){.countdown{grid-template-columns:repeat(4,1fr)}.gallery{grid-template-columns:repeat(3,1fr)}}
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: #faf8f5;
+    color: #333
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .65)), url(images/franqui_hero.jpeg);
+    background-size: cover;
+    background-position: 65% center
+}
+
+.overlay {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px
+}
+
+.xv, h1 {
+    font-family: "Playfair Display", serif;
+    color: #f6dd8c
+}
+
+.xv {
+    font-size: 4rem
+}
+
+h1 {
+    font-size: clamp(4rem, 12vw, 7rem);
+    margin: 0
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 12px
+}
+
+.countdown div {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08)
+}
+
+.countdown span {
+    display: block;
+    font-size: 2rem;
+    color: #d4af37
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 10px
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: .3s
+}
+
+.gallery img:hover {
+    transform: scale(1.03)
+}
+
+.timeline div {
+    background: white;
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 12px
+}
+
+.floating-menu {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 99
+}
+
+.floating-menu a {
+    display: block;
+    background: #d4af37;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 50%
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid #ddd
+}
+
+button {
+    background: #d4af37;
+    color: #fff;
+    border: none
+}
+
+@media (min-width: 768px) {
+    .countdown {
+        grid-template-columns:repeat(4, 1fr)
+    }
+
+    .gallery {
+        grid-template-columns:repeat(3, 1fr)
+    }
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.particles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.particles::before{
+    content:"";
+    position:absolute;
+    inset:-100px;
+    background-image:
+    radial-gradient(
+        #d4af37 1px,
+        transparent 1px
+    );
+
+    background-size:40px 40px;
+
+    opacity:.15;
+
+    animation:particlesMove 30s linear infinite;
+}
+
+@keyframes particlesMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+
+}
+
+.timeline{
+    position:relative;
+    margin-top:40px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:#d4af37;
+}
+
+.timeline div{
+    margin-left:55px;
+    position:relative;
+}
+
+.timeline div::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    left:-43px;
+    top:16px;
+
+    background:#d4af37;
+
+    border-radius:50%;
+}
+
+.gallery img{
+    cursor:pointer;
+}
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+}
+
+#lightbox.active{
+    display:flex;
+}
+
+#lightbox img{
+    max-width:95%;
+    max-height:95%;
+}
+
+#closeLightbox{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    color:white;
+
+    font-size:3rem;
+
+    cursor:pointer;
+}
+
+.gift-box{
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-top:20px;
+
+    text-align:center;
+}
+
+.gift-alias{
+
+    font-size:1.4rem;
+
+    margin:15px 0;
+
+    color:#d4af37;
+
+    font-weight:700;
+}
+
+.rsvp-float{
+
+    position:fixed;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:15px;
+
+    background:#d4af37;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    z-index:9999;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+@media(min-width:768px){
+
+    .rsvp-float{
+        display:none;
+    }
+}

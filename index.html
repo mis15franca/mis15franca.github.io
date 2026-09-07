@@ -3,62 +3,180 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Franca XV</title>
+
+    <title>XV de Franca</title>
+
     <meta property="og:title" content="XV de Franca">
     <meta property="og:description" content="Acompañanos en esta noche especial">
-    <meta property="og:image" content="images/franqui_hero.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta property="og:image" content="https://mis15franca.github.io/images/franqui_hero.jpeg">
+    <meta property="og:type" content="website">
+
+    https://fonts.googleapis.com
+    https://fonts.gstatic.com
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<nav class="floating-menu"><a href="#hero">🏠</a><a href="#countdown">⏳</a><a href="#historia">📸</a><a href="#rsvp">✅</a>
-</nav>
+
+<nav class="floating-menu">
+    #hero🏠</a>
+    <aountdown⏳</a>
+    <aistoria📸</a>
+    <a href="#r</nav>
+
+<a href="#rsvp" class="rsvp-float">
+>
+
 <header id="hero" class="hero">
+
+    <div class="particles"></div>
+
     <div class="overlay">
-        <div class="hero-content">
+
+        <div class="hero-content" data-aos="fade-up">
+
             <div class="xv">XV</div>
+
             <h1>FRANCA</h1>
-            <p>03 Octubre 2026</p><a class="btn" href="#countdown">Descubrir invitación</a></div>
+
+            <p>03 Octubre 2026</p>
+
+            #countdown
+                Descubrir invitación
+            </a>
+
+        </div>
+
     </div>
+
 </header>
-<section id="countdown" class="section"><h2>Falta muy poco</h2>
+
+<section id="countdown" class="section" data-aos="zoom-in">
+
+    <h2>Falta muy poco</h2>
+
     <div class="countdown">
-        <div><span id="days">0</span><small>Días</small></div>
-        <div><span id="hours">0</span><small>Horas</small></div>
-        <div><span id="minutes">0</span><small>Minutos</small></div>
-        <div><span id="seconds">0</span><small>Segundos</small></div>
+
+        <div>
+            <span id="days">0</span>
+            <small>Días</small>
+        </div>
+
+        <div>
+            <span id="hours">0</span>
+            <small>Horas</small>
+        </div>
+
+        <div>
+            <span id="minutes">0</span>
+            <small>Minutos</small>
+        </div>
+
+        <div>
+            <span id="seconds">0</span>
+            <small>Segundos</small>
+        </div>
+
     </div>
+
 </section>
-<section id="historia" class="section"><h2>Mi historia</h2>
+
+<section id="historia" class="section" data-aos="fade-up">
+
+    <h2>Mi historia</h2>
+
     <div class="timeline">
+
         <div>👶 Primeros años</div>
         <div>🎒 Escuela</div>
         <div>🌊 Aventuras</div>
         <div>🎉 Amigos</div>
         <div>👑 XV</div>
+
     </div>
-    <div class="gallery"><img src="images/foto1.jpg"><img src="images/foto2.jpg"><img src="images/foto3.jpg"><img
-            src="images/foto4.jpg"><img src="images/foto5.jpg"><img src="images/foto6.jpg"><img
-            src="images/foto7.jpg"><img src="images/foto8.jpg"><img src="images/foto9.jpg"></div>
+
+    <div class="gallery" data-aos="fade-up">
+
+        images/foto1.jpg
+        images/foto2.jpg
+        <img loading="lazy" src="images/foto3.jpg" alt="">
+mages/foto5.jpg
+        <imges/foto6.jpg
+        <img loading="lazy" src="images/foto8.jpg
+        <img loading="lazy" src="images/foto9.jpg" alt="">
+
+lass="section" data-aos="fade-up">
+
+    <h2>Mi próxima aventura ✈️</h2>
+
+    <p>
+        Tu presencia es mi regalo más importante.
+        Si además querés colaborar con mi próximo viaje,
+        podés hacerlo utilizando el siguiente alias.
+    </p>
+
+    <div class="gift-box">
+
+        <strong>Alias:</strong>
+
+        <div class="gift-alias">
+            franca.viaje.15
+        </div>
+
+        <button type="button" onclick="copiarAlias()">
+            Copiar alias
+        </button>
+
+    </div>
+
 </section>
-<section class="section"><h2>Mi próxima aventura</h2>
-    <p>Tu presencia es mi regalo más importante. Si además deseás colaborar con mi próximo viaje, podrás hacerlo
-        mediante el alias que indicaremos aquí.</p></section>
-<section id="rsvp" class="section"><h2>Confirmá tu asistencia</h2>
-    <form id="rsvpForm"><input id="nombre" placeholder="Nombre y apellido" required><select id="asiste" required>
-        <option value="">¿Asistís?</option>
-        <option>Sí</option>
-        <option>No</option>
-    </select><input id="cancion" placeholder="Canción favorita"><textarea id="comentarios"
-                                                                          placeholder="Comentarios"></textarea>
-        <button>Confirmar</button>
+
+<section id="rsvp" class="section" data-aos="fade-up">
+
+    <h2>Confirmá tu asistencia</h2>
+
+    <form id="rsvpForm">
+
+        <input id="nombre" placeholder="Nombre y apellido" required>
+
+        <select id="asiste" required>
+            <option value="">¿Asistís?</option>
+            <option>Sí</option>
+            <option>No</option>
+        </select>
+
+        <input id="cancion" placeholder="Canción favorita">
+
+        <textarea id="comentarios" placeholder="Comentarios"></textarea>
+
+        <button type="submit">
+            Confirmar
+        </button>
+
     </form>
+
     <div id="mensaje"></div>
+
 </section>
+
+<div id="lightbox">
+
+    <span id="closeLightbox">&times;</span>
+
+    <img id="lightboxImage">
+
+</div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <script src="app.js"></script>
+
 </body>
 </html>

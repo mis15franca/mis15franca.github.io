@@ -8,110 +8,136 @@ const SCRIPT_URL =
 
 const targetDate = new Date("2026-10-03T21:00:00");
 
-/* ======================
-   COUNTDOWN
-====================== */
-
 function updateCountdown() {
 
     const diff = targetDate - new Date();
 
     if (diff <= 0) return;
 
-    document.getElementById("days").textContent =
+    days.textContent =
         Math.floor(diff / 86400000);
 
-    document.getElementById("hours").textContent =
+    hours.textContent =
         Math.floor((diff % 86400000) / 3600000);
 
-    document.getElementById("minutes").textContent =
+    minutes.textContent =
         Math.floor((diff % 3600000) / 60000);
 
-    document.getElementById("seconds").textContent =
+    seconds.textContent =
         Math.floor((diff % 60000) / 1000);
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* ======================
-   GALERÍA
-====================== */
+/* LIGHTBOX */
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImage =
+document.getElementById("lightboxImage");
 
 document
-    .querySelectorAll(".gallery img")
-    .forEach(img => {
+.querySelectorAll(".gallery img")
+.forEach(img => {
 
-        img.addEventListener("click", () => {
-            window.open(img.src, "_blank");
+    img.addEventListener("click", () => {
+
+        lightboxImage.src = img.src;
+
+        lightbox.classList.add("active");
+
+    });
+
+});
+
+document
+.getElementById("closeLightbox")
+.addEventListener("click", () => {
+
+    lightbox.classList.remove("active");
+
+});
+
+/* RSVP */
+
+document
+.getElementById("rsvpForm")
+.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    const btn =
+        event.target.querySelector("button");
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+
+    const data = {
+
+        nombre:
+            document.getElementById("nombre").value,
+
+        asiste:
+            document.getElementById("asiste").value,
+
+        cancion:
+            document.getElementById("cancion").value,
+
+        comentarios:
+            document.getElementById("comentarios").value
+    };
+
+    try {
+
+        await fetch(SCRIPT_URL, {
+
+            method: "POST",
+
+            mode: "cors",
+
+            headers: {
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(data)
+
         });
 
-    });
+        confetti({
+            particleCount: 200,
+            spread: 90,
+            origin: { y: 0.6 }
+        });
 
-/* ======================
-   RSVP
-====================== */
+        mensaje.innerHTML =
+            "✨ ¡Gracias por confirmar tu asistencia!";
 
-document
-    .getElementById("rsvpForm")
-    .addEventListener("submit", async event => {
+        event.target.reset();
 
-        event.preventDefault();
+    } catch(error) {
 
-        const btn =
-            event.target.querySelector("button");
+        mensaje.innerHTML =
+            "⚠️ No se pudo enviar la información.";
 
-        btn.disabled = true;
-        btn.textContent = "Enviando...";
+        console.error(error);
 
-        const data = {
-            nombre:
-                document.getElementById("nombre").value,
-            asiste:
-                document.getElementById("asiste").value,
-            cancion:
-                document.getElementById("cancion").value,
-            comentarios:
-                document.getElementById("comentarios").value
-        };
+    } finally {
 
-        try {
+        btn.disabled = false;
+        btn.textContent = "Confirmar";
 
-            await fetch(SCRIPT_URL, {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    "Content-Type":
-                    "text/plain;charset=utf-8"
-                },
-                body: JSON.stringify(data)
-            });
+    }
 
-            confetti({
-                particleCount: 200,
-                spread: 90,
-                origin: {
-                    y: 0.6
-                }
-            });
+});
 
-            document.getElementById("mensaje").innerHTML =
-                "✨ ¡Gracias por confirmar tu asistencia!";
+function copiarAlias() {
 
-            event.target.reset();
+    navigator.clipboard.writeText(
+        "franca.viaje.15"
+    );
 
-        } catch (error) {
-
-            document.getElementById("mensaje").innerHTML =
-                "⚠️ No se pudo enviar la información. Intentá nuevamente.";
-
-            console.error(error);
-
-        } finally {
-
-            btn.disabled = false;
-            btn.textContent = "Confirmar";
-
-        }
-
-    });
+    alert("Alias copiado");
+}
