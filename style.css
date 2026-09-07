@@ -92,6 +92,19 @@ h3 {
     color: #d4af37
 }
 
+.spotify-section{
+
+    text-align:center;
+
+}
+
+.spotify-section p{
+
+    max-width:600px;
+    margin:0 auto 20px auto;
+
+}
+
 .btn {
     display: inline-block;
     background: #d4af37;
