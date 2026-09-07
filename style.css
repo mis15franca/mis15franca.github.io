@@ -39,6 +39,7 @@ body {
 
 .hero-content{
     animation: heroFade 1.3s ease-out;
+    margin-top: 30vh;
 }
 
 @keyframes heroFade{
