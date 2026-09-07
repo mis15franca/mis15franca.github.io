@@ -9,12 +9,71 @@ body {
     color: #333
 }
 
-.hero {
+/*.hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .65)), url(images/franqui_hero.jpeg);
     background-size: cover;
     background-position: 65% center
+}*/
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.70)
+        ),
+        url(images/franqui_hero.jpeg);
+
+    background-size: cover;
+    background-position: 65% center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
 }
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:120px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #faf8f5
+        );
+
+    pointer-events:none;
+}
+
+.hero-content{
+    animation: heroFade 1.3s ease-out;
+}
+
+@keyframes heroFade{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
 
 .overlay {
     min-height: 100vh;
