@@ -79,6 +79,13 @@ h1 {
     margin: 0
 }
 
+h2 {
+    
+    font-size: 4rem;
+    color: #d4af37
+}
+
+
 h3 {
     display: block;
     font-size: 2rem;
