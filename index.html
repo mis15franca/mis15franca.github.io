@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-<nav class="floating-menu"><a href="#hero">🏠</a><a href="#cuando">⏳</a><a href="#ubicacion">📍</a><a href="#historia">📸</a><a href="#musica">🎵</a><a href="#regalo">🎁</a><a href="#rsvp">✅</a>
+<nav class="floating-menu"><a href="#hero">🏠</a><a href="#cuando">⏳</a><a href="#ubicacion">📍</a><a href="#historia">📸</a><!--<a href="#musica">🎵</a>--!><a href="#regalo">🎁</a><a href="#rsvp">✅</a>
 </nav>
 <header id="hero" class="hero">
     <div class="overlay">
@@ -59,12 +59,14 @@
 <section id="historia" class="section">
     <div class="card">
     <h3>Mis recuerdos</h3>
-    <div class="gallery"><img src="images/foto1.jpg"><img src="images/foto2.jpg"><img src="images/foto3.jpg"><img
-            src="images/foto4.jpg"><img src="images/foto9.jpg"><img src="images/foto5.jpg"><img
-            src="images/foto6.jpg"><img src="images/foto7.jpg"><img src="images/foto8.jpg"></div>
+    <div class="gallery"><img src="images/foto1.jpg"><img src="images/foto2.jpg"><img src="images/foto3.jpg">
+        <img src="images/foto4.jpg"><img src="images/foto9.jpg"><img src="images/foto5.jpg">
+        <img src="images/foto6.jpg"><img src="images/foto7.jpg"><img src="images/foto8.jpg">
+        <img src="images/foto10.jpg"><img src="images/foto11.jpg"><img src="images/foto12.jpg">
+    </div>
     </div>
 </section>
-<section id="musica" class="section" data-aos="fade-up">
+<!-- <section id="musica" class="section" data-aos="fade-up">
     <div class="card">
     <h3>Mi banda sonora 🎵</h3>
 
@@ -82,14 +84,15 @@
         loading="lazy">
     </iframe>
     </div>
-</section>
+</section> --!>
+
 <section id="regalo" class="section">
     <div class="card">
     <h3>Mi próxima aventura</h3>
     <p>Después de celebrar esta noche tan especial junto a todos ustedes, me espera otra gran emoción:</p>
         <p><strong>El 10 de octubre viajo a Disney! 🏰💫</strong> </p>
     <p>Por eso quiero contarles que, aunque el mejor regalo es compartir este momento con las personas que quiero,
-        quienes deseen hacerme un regalo pueden colaborar con esta aventura mediante una transferencia a:</p>
+        quienes deseen hacerme un regalo pueden colaborar con esta aventura</p>
     <p>Caja de Ahorro en U$S - Banco Itaú - Cuenta 3016436 (Carolina Antúnez)</p>
     </div>
 </section>
@@ -102,8 +105,8 @@
         <option value="">¿Asistís?</option>
         <option>Sí</option>
         <option>No</option>
-    </select><input id="cancion" placeholder="Una canción que no puede faltar en el playlist de la fiesta"><textarea id="comentarios"
-                                                                          placeholder="Comentarios - Sos vegetariano/a?"></textarea>
+    </select><input id="cancion" placeholder="Una canción que no puede faltar"><textarea id="comentarios"
+                                                                          placeholder="¿Tenes alguna restricción o preferencia alimentaria?"></textarea>
         <button>Confirmar</button>
     </form>
     <div id="mensaje"></div>
